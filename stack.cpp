@@ -43,8 +43,8 @@ template <typename T> int Stack<T>::size() {
 template <typename T> void Stack<T>::push(T value) {
   if (this->full()) return;
 
-  this->pointer++;
   *(this->pointer) = value;
+  this->pointer++;
 }
 
 template <typename T> T Stack<T>::peek() {
@@ -54,7 +54,6 @@ template <typename T> T Stack<T>::peek() {
 template <typename T> T Stack<T>::pop() {
   if (this->empty()) return 0;
 
-  int value = *(this->pointer);
   this->pointer--;
-  return value;
+  return *(this->pointer);
 }
